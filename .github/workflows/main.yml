@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt0808-CI
+name: OpenWrt-CI-0811
 
 on:
   push:
@@ -55,6 +55,7 @@ jobs:
 
       - name: Update feeds
         run: |
+          git pull
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -213,13 +214,13 @@ jobs:
           CONFIG_DEFAULT_luci-app-ssr-plus=y
           CONFIG_DEFAULT_luci-app-ttyd=y
           CONFIG_DEFAULT_luci-app-turboacc=y
-          CONFIG_DEFAULT_luci-app-unblockmusic=y
+          # CONFIG_DEFAULT_luci-app-unblockmusic=y
           CONFIG_DEFAULT_luci-app-upnp=y
           CONFIG_DEFAULT_luci-app-vlmcsd=y
           CONFIG_DEFAULT_luci-app-vsftpd=y
           CONFIG_DEFAULT_luci-app-wireguard=y
           CONFIG_DEFAULT_luci-app-wol=y
-          CONFIG_DEFAULT_luci-app-xlnetacc=y
+          # CONFIG_DEFAULT_luci-app-xlnetacc=y
           CONFIG_DEFAULT_luci-app-zerotier=y
           CONFIG_DEFAULT_luci-newapi=y
           CONFIG_DEFAULT_luci-proto-bonding=y
@@ -298,7 +299,7 @@ jobs:
           #
           # Image Options
           #
-          CONFIG_TARGET_KERNEL_PARTSIZE=16
+          CONFIG_TARGET_KERNEL_PARTSIZE=32
           CONFIG_TARGET_ROOTFS_PARTSIZE=512
           CONFIG_TARGET_ROOTFS_PARTNAME=""
           # CONFIG_TARGET_ROOTFS_PERSIST_VAR is not set
@@ -4731,7 +4732,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-samba=y
           # CONFIG_PACKAGE_luci-app-samba4 is not set
           # CONFIG_PACKAGE_luci-app-serverchan is not set
-          CONFIG_PACKAGE_luci-app-shadowsocks-libev=y
+          # CONFIG_PACKAGE_luci-app-shadowsocks-libev=y
           # CONFIG_PACKAGE_luci-app-shairplay is not set
           # CONFIG_PACKAGE_luci-app-siitwizard is not set
           # CONFIG_PACKAGE_luci-app-simple-adblock is not set
@@ -4757,8 +4758,8 @@ jobs:
           # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_DNSPROXY is not set
           CONFIG_PACKAGE_luci-app-udpxy=y
           # CONFIG_PACKAGE_luci-app-uhttpd is not set
-          CONFIG_PACKAGE_luci-app-unblockmusic=y
-          CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
+          # CONFIG_PACKAGE_luci-app-unblockmusic=y
+          # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
           # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS is not set
           # CONFIG_PACKAGE_luci-app-unbound is not set
           CONFIG_PACKAGE_luci-app-upnp=y
@@ -4776,7 +4777,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-wireguard=y
           CONFIG_PACKAGE_luci-app-wol=y
           # CONFIG_PACKAGE_luci-app-wrtbwmon is not set
-          CONFIG_PACKAGE_luci-app-xlnetacc=y
+          # CONFIG_PACKAGE_luci-app-xlnetacc=y
           CONFIG_PACKAGE_luci-app-zerotier=y
           # end of 3. Applications
 
@@ -5033,7 +5034,7 @@ jobs:
           CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-turboacc-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-udpxy-zh-cn=y
-          CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=y
+          # CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-upnp-ca is not set
           # CONFIG_PACKAGE_luci-i18n-upnp-cs is not set
           # CONFIG_PACKAGE_luci-i18n-upnp-de is not set
@@ -5092,7 +5093,7 @@ jobs:
           # CONFIG_PACKAGE_luci-i18n-wol-vi is not set
           CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
           # CONFIG_PACKAGE_luci-i18n-wol-zh-tw is not set
-          CONFIG_PACKAGE_luci-i18n-xlnetacc-zh-cn=y
+          # CONFIG_PACKAGE_luci-i18n-xlnetacc-zh-cn=y
           CONFIG_PACKAGE_luci-i18n-zerotier-zh-cn=y
           # end of LuCI
 
@@ -6074,7 +6075,7 @@ jobs:
           # CONFIG_PACKAGE_adblock is not set
           CONFIG_PACKAGE_adbyby=y
           # CONFIG_PACKAGE_addrwatch is not set
-          # CONFIG_PACKAGE_adguardhome is not set
+          CONFIG_PACKAGE_adguardhome is not set
           # CONFIG_PACKAGE_ahcpd is not set
           # CONFIG_PACKAGE_alfred is not set
           # CONFIG_PACKAGE_apcupsd is not set
@@ -6209,7 +6210,7 @@ jobs:
           # CONFIG_PACKAGE_nextdns is not set
           # CONFIG_PACKAGE_nfdump is not set
           CONFIG_PACKAGE_nlbwmon=y
-          CONFIG_PACKAGE_noddos=y
+          # CONFIG_PACKAGE_noddos=y
           # CONFIG_PACKAGE_noping is not set
           # CONFIG_PACKAGE_npc is not set
           # CONFIG_NPC_COMPRESS_UPX is not set
